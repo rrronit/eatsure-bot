@@ -26,7 +26,7 @@ location.reload();
 };
 
   return (
-    <Button variant="destructive" onClick={()=>handleDelete(index)}>Delete</Button>
+    <Button variant="destructive"  onClick={()=>handleDelete(index)}>Delete</Button>
   )
 }
 
