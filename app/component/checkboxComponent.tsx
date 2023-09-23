@@ -18,9 +18,6 @@ const CheckboxComponent = ({index,used,setUsed}:props) => {
             "Content-Type":"aplication/json"
           },
           body:JSON.stringify(index)
-      }).then(async(res)=>{
-        const data=await res.json()
-        console.log(data)
       })
      };
 
