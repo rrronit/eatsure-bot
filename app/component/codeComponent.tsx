@@ -4,11 +4,15 @@ import ButtonComponent from './buttonComponent'
 import { useState } from 'react';
 
 type codeType = {
-    id:string
-    code: string;
-    used: boolean;
+    id:string,
+    code: string,
+    used: boolean,
+    toggle:(index:string,used:boolean)=>void,
+    handleDelete:(index:string)=>void
+
+
   };
-const CodeComponent = ({id,code,used}:codeType) => {
+const CodeComponent = ({id,code,used,toggle,handleDelete}:codeType) => {
   
     const [Used, setUsed] = useState(used)
 
@@ -19,7 +23,7 @@ const CodeComponent = ({id,code,used}:codeType) => {
   >
     <div className="flex items-center justify-between">
       <div className="flex items-center space-x-4">
-       <CheckboxComponent index={id} used={Used} setUsed={setUsed} />
+       <CheckboxComponent index={id} used={Used} setUsed={setUsed} toggle={toggle} />
         <label
           htmlFor="terms"
           className={`text-lg font-medium leading-none ${
@@ -28,7 +32,7 @@ const CodeComponent = ({id,code,used}:codeType) => {
           {code}
         </label>
       </div>
-          <ButtonComponent index={id}/>
+          <ButtonComponent index={id} handleDelete={handleDelete}/>
      
     </div>
   </div>

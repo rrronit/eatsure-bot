@@ -1,12 +1,12 @@
 "use client"
 
-import { revalidateTag } from 'next/cache';
 import { Button } from '../../components/ui/button'
 
 
-const ButtonComponent = ({index}:{index:string}) => {
-
+const ButtonComponent = ({index,handleDelete}:{index:string,handleDelete:(index:string)=>void}) => {
+/* 
 const handleDelete = async(index: string) => {
+  
   await fetch(`/api/codes`,{
    
 
@@ -23,10 +23,10 @@ location.reload();
 
 
 
-};
+}; */
 
   return (
-    <Button variant="destructive"  onClick={()=>handleDelete(index)}>Delete</Button>
+    <Button variant="destructive" onClick={()=>handleDelete(index)}>Delete</Button>
   )
 }
 

@@ -4,9 +4,7 @@ import { NextResponse } from "next/server";
 
 export const DELETE=async(req:Request)=>{
     
-    const _id=await req.json()
-    await connectMongodb()
-    await codes.findByIdAndDelete(_id);
+   
     return NextResponse.json("done")
 
 }
