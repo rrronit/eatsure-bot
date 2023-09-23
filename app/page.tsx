@@ -1,6 +1,7 @@
 import codes from "@/models/codes";
 import CodeComponent from "./component/codeComponent";
 import connectMongodb from "@/lib/mongodb";
+import { useRouter } from "next/navigation";
 
 type codeType = {
   _id: string;
@@ -15,6 +16,7 @@ const toggle =async (index: string,used:boolean) => {
     if (code){
     code.used = !used;
     await code.save();
+    
   
    };
   }
@@ -22,7 +24,9 @@ const toggle =async (index: string,used:boolean) => {
   const handleDelete =async (index:string) => {
     "use server"
     await codes.findByIdAndDelete(index);
+   
     }
+
   
 
 export default async function Home() {

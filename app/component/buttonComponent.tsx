@@ -4,29 +4,21 @@ import { Button } from '../../components/ui/button'
 
 
 const ButtonComponent = ({index,handleDelete}:{index:string,handleDelete:(index:string)=>void}) => {
-/* 
-const handleDelete = async(index: string) => {
+
+const handleClientDelete = async(index: string) => {
+  handleDelete(index)
+  setTimeout(() => {
+    window.location.reload()
+  }, 500);
   
-  await fetch(`/api/codes`,{
-   
-
-    method:"delete",
-    headers:{
-      "Content-Type":"aplication/json"
-    },
-    body:JSON.stringify(index)
-    
-}).then(res=>{
-  console.log(res.json())
-})
-location.reload();
 
 
 
-}; */
+
+}; 
 
   return (
-    <Button variant="destructive" onClick={()=>handleDelete(index)}>Delete</Button>
+    <Button variant="destructive" onClick={()=>handleClientDelete(index)}>Delete</Button>
   )
 }
 
