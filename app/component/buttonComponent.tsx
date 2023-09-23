@@ -1,14 +1,16 @@
 "use client"
 
+import { useRouter } from 'next/navigation';
 import { Button } from '../../components/ui/button'
 
 
 const ButtonComponent = ({index,handleDelete}:{index:string,handleDelete:(index:string)=>void}) => {
+  const router=useRouter()
 
 const handleClientDelete = async(index: string) => {
   handleDelete(index)
   setTimeout(() => {
-    window.location.reload()
+    router.refresh()
   }, 500);
   
 
