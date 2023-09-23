@@ -10,5 +10,4 @@ const getCodes = async() => {
     allCodes
   )
 }
-
 export default getCodes
