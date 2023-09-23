@@ -2,13 +2,6 @@ import connectMongodb from "@/lib/mongodb";
 import codes from "@/models/codes";
 import { NextResponse } from "next/server";
 
-export const GET=async(req:Request)=>{
-    await connectMongodb()
-    const allCodes= await codes.find()
-
-    return NextResponse.json(allCodes)
-
-}
 export const DELETE=async(req:Request)=>{
     
     const _id=await req.json()

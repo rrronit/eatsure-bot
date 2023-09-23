@@ -1,5 +1,6 @@
+import codes from "@/models/codes";
 import CodeComponent from "./component/codeComponent"
-import getCodes from "@/lib/getCodes";
+
 
 type codeType = {
   _id:string,
@@ -8,8 +9,8 @@ type codeType = {
 };
 
 export default async function Home() {
-  
-  const allCodes:codeType[]=await getCodes()
+  const allCodes:codeType[]=await codes.find()
+
 
   
   return (
