@@ -15,7 +15,7 @@ const CodeComponent = ({id,code,used}:codeType) => {
   return (
     <div
     key={id}
-    className="bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-transform transform hover:-translate-y-1"
+    className="bg-gray-800 m-2 rounded-lg shadow-md p-6 hover:shadow-lg transition-transform transform "
   >
     <div className="flex items-center justify-between">
       <div className="flex items-center space-x-4">

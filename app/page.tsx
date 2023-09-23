@@ -22,7 +22,7 @@ export default async function Home() {
         <h1 className="text-3xl font-bold text-gray-200 mb-6">Code List</h1>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {allCodes.map((code) => (
-           <CodeComponent key={code._id} id={code._id} code={code.code} used={code.used}/>
+           <CodeComponent key={code._id.toString()} id={code._id.toString()} code={code.code} used={code.used}/>
           ))}
         </div>
       </div>
