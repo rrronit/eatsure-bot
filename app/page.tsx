@@ -1,5 +1,6 @@
 import codes from "@/models/codes";
 import CodeComponent from "./component/codeComponent"
+import connectMongodb from "@/lib/mongodb";
 
 
 type codeType = {
@@ -9,6 +10,8 @@ type codeType = {
 };
 
 export default async function Home() {
+  await connectMongodb()
+
   const allCodes:codeType[]=await codes.find()
 
 
