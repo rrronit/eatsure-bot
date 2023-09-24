@@ -31,9 +31,9 @@ const CodeComponent = ({id,code,used,toggle,handleDelete}:codeType) => {
           }`}>
           {code}
         </label>
-  
+     </div>
           <ButtonComponent index={id} handleDelete={handleDelete}/>
-              </div>
+           
      
     </div>
   </div>
